@@ -12,6 +12,12 @@ export default new Router({
       component: Home
     },
     {
+      path: "/sessions",
+      name: "sessions",
+      component: () =>
+        import(/* webpackChunkName: "live" */ "./views/PageSessions.vue")
+    },
+    {
       path: "/live",
       name: "live",
       component: () =>

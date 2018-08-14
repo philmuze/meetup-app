@@ -27,7 +27,7 @@ export default {
     };
   },
   methods: {
-    markAnswered: function(event) {
+    markAnswered: function() {
       this.showCard = !this.showCard;
     }
   }
