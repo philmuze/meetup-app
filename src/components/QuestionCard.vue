@@ -68,6 +68,8 @@ export default {
     max-height: 500px;
   }
   75% {
+    opacity: 0;
+    transform: translateX(100vw);
   }
 
   100% {
