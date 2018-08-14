@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div class="question-card flex justify-center p-4 container mx-auto" @click="markAnswered">
+    <div v-if="showCard" class="question-card flex justify-center p-4 container mx-auto" @click="markAnswered">
       <div class="max-w-sm border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded p-4 flex flex-col justify-between leading-normal shadow">
         <div class="mb-8">
           <div class="text-black font-bold text-xl mb-2">Can coffee make you a better developer?</div>
@@ -21,9 +21,14 @@
 <script>
 export default {
   name: "QuestionCard",
+  data() {
+    return {
+      showCard: true
+    }
+  },
   methods: {
     markAnswered: function (event) {
-      console.log(this, event)
+      this.showCard = !this.showCard
     }
   }
 }
@@ -59,12 +64,12 @@ export default {
 
 @keyframes slide-out {
   0% {
-    transform: translateY(50px);
+    transform: translatex(0);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translatex(100vw);
   }
 }
 </style>
