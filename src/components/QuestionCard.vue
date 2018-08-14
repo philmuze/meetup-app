@@ -24,15 +24,14 @@ export default {
   data() {
     return {
       showCard: true
-    }
+    };
   },
   methods: {
-    markAnswered: function (event) {
-      this.showCard = !this.showCard
+    markAnswered: function(event) {
+      this.showCard = !this.showCard;
     }
   }
-}
-
+};
 </script>
 
 <style lang="scss" scoped>
@@ -48,6 +47,7 @@ export default {
 .fade-enter,
 .fade-leave-to {
   animation: slide-out 0.5s;
+  transform: height 1s ease;
 }
 
 @keyframes slide-in {
@@ -64,12 +64,17 @@ export default {
 
 @keyframes slide-out {
   0% {
-    transform: translatex(0);
+    transform: translateX(0);
+    max-height: 500px;
+  }
+  75% {
   }
 
   100% {
     opacity: 0;
-    transform: translatex(100vw);
+    transform: translateX(100vw);
+    max-height: 0px;
+    padding: 0;
   }
 }
 </style>
